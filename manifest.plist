@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  Ad Hoc over-the-air install manifest for Hexkeep.
+
+  WHY THIS EXISTS: Apple's TestFlight backend refuses to serve this app ("The requested app is not
+  available or doesn't exist") for reasons that are on Apple's side - every gate we can inspect
+  (build VALID, tester ACCEPTED, availability, price, agreements, beta contract) verifies green.
+  Ad Hoc + itms-services bypasses TestFlight entirely: iOS downloads the ipa straight from the URL
+  below and trusts it because the provisioning profile inside contains this iPhone's UDID.
+
+  The ipa MUST be served over HTTPS. GitHub Releases is used because GitHub Pages caps files at
+  100 MB and the build is ~444 MB.
+-->
+<plist version="1.0">
+<dict>
+  <key>items</key>
+  <array>
+    <dict>
+      <key>assets</key>
+      <array>
+        <dict>
+          <key>kind</key>
+          <string>software-package</string>
+          <key>url</key>
+          <string>https://github.com/ozcanyesilyurt/hexkeep-privacy/releases/download/adhoc-1/Hexkeep.ipa</string>
+        </dict>
+      </array>
+      <key>metadata</key>
+      <dict>
+        <key>bundle-identifier</key>
+        <string>com.ozcanyesilyurt.hexkeep</string>
+        <key>bundle-version</key>
+        <string>1.0</string>
+        <key>kind</key>
+        <string>software</string>
+        <key>title</key>
+        <string>Hexkeep: Match-3 RPG</string>
+      </dict>
+    </dict>
+  </array>
+</dict>
+</plist>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Install Hexkeep (Ad Hoc)</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { font-family: -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+         line-height: 1.6; max-width: 640px; margin: 0 auto; padding: 24px; color: #1a1a1a; }
+  h1 { font-size: 1.6rem; margin-bottom: 0.1em; }
+  .sub { color: #666; margin-top: 0; }
+  .btn { display: block; text-align: center; background: #1558d6; color: #fff; font-size: 1.15rem;
+         font-weight: 600; text-decoration: none; padding: 16px 24px; border-radius: 12px;
+         margin: 28px 0; }
+  .note { background: #f4f4f5; border-radius: 10px; padding: 14px 16px; margin: 18px 0; }
+  .warn { background: #fff4e5; border-left: 4px solid #e08600; border-radius: 6px;
+          padding: 14px 16px; margin: 18px 0; }
+  ol { padding-left: 1.2em; } li { margin-bottom: 8px; }
+  code { background: #eee; padding: 1px 5px; border-radius: 4px; font-size: 0.9em; }
+  @media (prefers-color-scheme: dark) {
+    body { color: #e6e6e6; background: #121212; }
+    .sub { color: #aaa; } .note { background: #1e1e20; } code { background: #262626; }
+    .warn { background: #2a2113; border-left-color: #e08600; }
+  }
+</style>
+</head>
+<body>
+
+<h1>Install Hexkeep</h1>
+<p class="sub">Ad Hoc build &middot; for registered devices only</p>
+
+<div class="warn">
+  <strong>Open this page in Safari on the iPhone.</strong> It will not work in Chrome, in another
+  browser, or on a computer. iOS only accepts an install link from Safari.
+</div>
+
+<a class="btn" href="itms-services://?action=download-manifest&url=https://ozcanyesilyurt.github.io/hexkeep-privacy/manifest.plist">
+  Install Hexkeep
+</a>
+
+<div class="note">
+  <strong>Before you tap:</strong> the download is about <strong>450&nbsp;MB</strong> and needs roughly
+  <strong>1&nbsp;GB free</strong> while it unpacks. Free up space first if the phone is nearly full.
+</div>
+
+<h2>If it installs but won&rsquo;t open</h2>
+<p><strong>Restart the iPhone.</strong> Since iOS&nbsp;18, a manually installed app needs a reboot before
+the system will trust its provisioning profile. This is expected, not a failure.</p>
+
+<p>If it still refuses, go to
+<code>Settings &rarr; General &rarr; VPN &amp; Device Management</code>, find the developer profile,
+and tap <strong>Trust</strong>.</p>
+
+<h2>Why not TestFlight?</h2>
+<p>Apple&rsquo;s TestFlight backend is currently refusing to serve this app
+(&ldquo;The requested app is not available or doesn&rsquo;t exist&rdquo;) even though the build, the
+tester, the availability, the price, the agreements and the beta contract all verify as correct. This
+Ad Hoc install bypasses TestFlight entirely: iOS downloads the app directly and trusts it because the
+provisioning profile inside it names this exact device.</p>
+
+<p><a href="./">Back to Hexkeep</a></p>
+
+</body>
+</html>
